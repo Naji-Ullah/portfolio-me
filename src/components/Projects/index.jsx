@@ -7,7 +7,35 @@ import { PROJECTS } from "../../data/portfolio";
 export default function Projects() {
   const [activeProject, setActiveProject] = useState(null);
   const [showScrollButton, setShowScrollButton] = useState(true);
+  const [visibleCards, setVisibleCards] = useState(new Set());
   const scrollRef = useRef(null);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = cardRefs.current.indexOf(entry.target);
+          if (entry.isIntersecting) {
+            setVisibleCards(prev => new Set([...prev, index]));
+          } else {
+            setVisibleCards(prev => {
+              const newSet = new Set(prev);
+              newSet.delete(index);
+              return newSet;
+            });
+          }
+        });
+      },
+      { threshold: 0.2, root: scrollRef.current }
+    );
+
+    cardRefs.current.forEach(ref => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,17 +70,23 @@ export default function Projects() {
       <div className="section__header">
         <SectionLabel>Curated Systems [0{PROJECTS.length}]</SectionLabel>
         <h2 className="section__title">
+          Selected
+          <br />
           Works
         </h2>
       </div>
       <div className="projects__scroll-container">
         <div className="projects__scroll" ref={scrollRef}>
-          {PROJECTS.map((project) => (
-            <ProjectCard
+          {PROJECTS.map((project, index) => (
+            <div
               key={project.id}
-              project={project}
+              ref={el => cardRefs.current[index] = el}
+              className={`project-card${visibleCards.has(index) ? " project-card--visible" : ""}`}
+              style={{ transitionDelay: `${(index % 3) * 0.1}s` }}
               onClick={() => handleSelect(project)}
-            />
+            >
+              <ProjectCard project={project} />
+            </div>
           ))}
         </div>
         {showScrollButton && (

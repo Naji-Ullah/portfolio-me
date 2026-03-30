@@ -1,8 +1,8 @@
 import Tag from "../ui/Tag";
 
-export default function ProjectCard({ project, onClick }) {
+export default function ProjectCard({ project }) {
   return (
-    <button className="project-card" onClick={onClick}>
+    <>
       <div className="project-card__header">
         <span className="project-card__domain">{project.domain}</span>
       </div>
@@ -18,6 +18,6 @@ export default function ProjectCard({ project, onClick }) {
         <span className="project-card__cta">View Details</span>
         <span className="project-card__arrow">→</span>
       </div>
-    </button>
+    </>
   );
 }

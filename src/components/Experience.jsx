@@ -1,9 +1,40 @@
+import { useState, useEffect, useRef } from "react";
 import SectionLabel from "./ui/SectionLabel";
 import { EXPERIENCE, EDUCATION } from "../data/portfolio";
 
-function BulletPoint({ children }) {
+function BulletPoint({ children, index }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
-    <li className="exp__bullet">
+    <li 
+      ref={ref}
+      className={`exp__bullet${isVisible ? " exp__bullet--visible" : ""}`}
+      style={{ transitionDelay: `${index * 0.05}s` }}
+    >
       <span className="exp__bullet-dot">•</span>
       <span>{children}</span>
     </li>
@@ -11,8 +42,34 @@ function BulletPoint({ children }) {
 }
 
 function Timeline({ company, role, period, bullets }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="exp__timeline">
+    <div ref={ref} className={`exp__timeline${isVisible ? " exp__timeline--visible" : ""}`}>
       <div className="exp__dot" aria-hidden="true" />
       <div className="exp__item">
         <div className="exp__item-head">
@@ -24,7 +81,7 @@ function Timeline({ company, role, period, bullets }) {
         </div>
         <ul className="exp__bullets">
           {bullets.map((bullet, i) => (
-            <BulletPoint key={i}>{bullet}</BulletPoint>
+            <BulletPoint key={i} index={i}>{bullet}</BulletPoint>
           ))}
         </ul>
       </div>
@@ -33,8 +90,34 @@ function Timeline({ company, role, period, bullets }) {
 }
 
 function Education({ degree, school }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="exp__education">
+    <div ref={ref} className={`exp__education${isVisible ? " exp__education--visible" : ""}`}>
       <SectionLabel>Education</SectionLabel>
       <p className="exp__degree">{degree}</p>
       <p className="exp__school">{school}</p>
