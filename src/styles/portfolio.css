@@ -311,7 +311,7 @@ body {
   font-size: clamp(80px,18vw,260px);
   font-weight: 800; 
   letter-spacing: -0.05em;
-  color: rgba(192,57,43,0.05); 
+  color: rgba(192,57,43,0.08); 
   pointer-events: none; 
   user-select: none; 
   white-space: nowrap;
@@ -360,6 +360,12 @@ body {
   
   .hero__sub {
     font-size: 15px;
+  }
+  
+  .hero__bg-word {
+    right: -10%;
+    font-size: clamp(60px, 20vw, 120px);
+    opacity: 1;
   }
 }
 
@@ -415,7 +421,7 @@ body {
   width: 600px;
   height: 600px;
   background: var(--red-dim);
-  opacity: 0.15;
+  opacity: 0.25;
   border-radius: 50%;
   pointer-events: none;
   filter: blur(60px);
@@ -436,7 +442,7 @@ body {
   width: 700px;
   height: 700px;
   background: var(--red-dim);
-  opacity: 0.15;
+  opacity: 0.25;
   border-radius: 50%;
   pointer-events: none;
   filter: blur(60px);
@@ -982,7 +988,7 @@ body {
   font-size: clamp(60px,14vw,200px);
   font-weight: 800; 
   letter-spacing: -0.05em;
-  color: rgba(192,57,43,0.04); 
+  color: rgba(192,57,43,0.08); 
   pointer-events: none; 
   user-select: none; 
   white-space: nowrap;
@@ -1058,6 +1064,13 @@ body {
   
   .contact__link-value {
     font-size: 16px;
+  }
+  
+  .contact__bg-word {
+    right: -10%;
+    bottom: -5%;
+    font-size: clamp(50px, 18vw, 100px);
+    opacity: 1;
   }
 }
 
