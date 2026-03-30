@@ -42,8 +42,6 @@ export default function Projects() {
       <div className="section__header">
         <SectionLabel>Curated Systems [0{PROJECTS.length}]</SectionLabel>
         <h2 className="section__title">
-          Selected
-          <br />
           Works
         </h2>
       </div>
