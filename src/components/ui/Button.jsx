@@ -1,8 +1,14 @@
-export default function Button({ href, variant = "primary", children, ...props }) {
-  const className = `btn btn--${variant}`;
+export default function Button({
+  href,
+  variant = "primary",
+  className = "",
+  children,
+  ...props
+}) {
+  const buttonClassName = `btn btn--${variant} ${className}`.trim();
   
   return (
-    <a href={href} className={className} {...props}>
+    <a href={href} className={buttonClassName} {...props}>
       {children}
     </a>
   );

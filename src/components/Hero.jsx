@@ -20,7 +20,9 @@ export default function Hero() {
           and real world delivery.
         </p>
         <div className="hero__cta-row">
-          <Button href="#projects">View Works</Button>
+          <Button href="#projects" className="btn--view-work">
+            View Work
+          </Button>
           <Button href="#contact" variant="ghost">
             Get in Touch
           </Button>

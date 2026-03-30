@@ -105,6 +105,66 @@ body {
   color: var(--text); 
 }
 
+.btn--view-work {
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.btn--view-work::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.24) 50%,
+    transparent 80%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.btn--view-work:hover {
+  transform: translateY(-2px) scale(1.015);
+  animation: viewWorkFloat 0.8s ease;
+}
+
+.btn--view-work:hover::after {
+  animation: viewWorkSheen 0.9s ease;
+}
+
+@keyframes viewWorkFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes viewWorkSheen {
+  0%,
+  55% {
+    left: -130%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn--view-work,
+  .btn--view-work:hover,
+  .btn--view-work:hover::after {
+    animation: none;
+  }
+}
+
 /* nav */
 .nav {
   position: fixed; 
