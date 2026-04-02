@@ -6,6 +6,7 @@ const TargetCursor = ({
   parallaxOn = true,
   hoverDuration = 0.2
 }) => {
+  const [isMobile, setIsMobile] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -24,6 +25,17 @@ const TargetCursor = ({
   }, []);
 
   useEffect(() => {
+    const checkMobile = () => {
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                            window.innerWidth <= 768;
+      setIsMobile(isMobileDevice);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    if (isMobile) return;
+
     const handleMouseMove = (e) => {
       if (!isVisible) setIsVisible(true);
       updatePosition(e);
@@ -37,6 +49,7 @@ const TargetCursor = ({
     window.addEventListener('mouseleave', handleMouseLeave);
 
     return () => {
+      window.removeEventListener('resize', checkMobile);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseenter', handleMouseEnter);
       window.removeEventListener('mouseleave', handleMouseLeave);
@@ -44,9 +57,11 @@ const TargetCursor = ({
         cancelAnimationFrame(rafId.current);
       }
     };
-  }, [isVisible, updatePosition]);
+  }, [isVisible, updatePosition, isMobile]);
 
   useEffect(() => {
+    if (isMobile) return;
+
     const clickableSelectors = [
       '.nav__link', '.nav__mobile-link', '.nav__logo', '.btn', '.nav__burger',
       '.projects__scroll-btn', '.scroll-to-top', '.project-card', '.contact__link',
@@ -79,16 +94,20 @@ const TargetCursor = ({
       document.removeEventListener('mouseover', handleMouseOver);
       document.removeEventListener('mouseout', handleMouseOut);
     };
-  }, []);
+  }, [isMobile]);
 
   useEffect(() => {
-    if (hideDefaultCursor) {
-      document.body.style.cursor = 'none';
-      return () => {
-        document.body.style.cursor = 'auto';
-      };
-    }
-  }, [hideDefaultCursor]);
+    // Don't hide default cursor on mobile
+    if (isMobile || !hideDefaultCursor) return;
+    
+    document.body.style.cursor = 'none';
+    return () => {
+      document.body.style.cursor = 'auto';
+    };
+  }, [hideDefaultCursor, isMobile]);
+
+  // Don't render cursor on mobile
+  if (isMobile) return null;
 
   return (
     <>
