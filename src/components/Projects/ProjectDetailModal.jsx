@@ -1,63 +1,84 @@
-import { useEffect } from "react";
-import SectionLabel from "../ui/SectionLabel";
-import Tag from "../ui/Tag";
-
-function BulletPoint({ children }) {
-  return (
-    <li className="modal__bullet">
-      <span className="modal__bullet-dot">▸</span>
-      <span>{children}</span>
-    </li>
-  );
-}
+import { useEffect, useRef } from "react";
 
 export default function ProjectDetailModal({ project, onClose }) {
+  const backRef = useRef(null);
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
+    backRef.current?.focus();
     return () => {
-      document.body.style.overflow = "unset";
+      document.body.style.overflow = "";
     };
   }, []);
 
   useEffect(() => {
-    const handleEscape = (e) => {
-      if (e.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", handleEscape);
-    return () => window.removeEventListener("keydown", handleEscape);
+    const onKey = (e) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal" onClick={(e) => e.stopPropagation()}>
-        <button className="modal__close" onClick={onClose} aria-label="Close">
-          ✕
-        </button>
-        
-        <div className="modal__header">
-          <div className="modal__meta">
-            <span className="modal__index">{project.index}</span>
-            <span className="modal__domain">{project.domain}</span>
+    <div className="reader" onClick={onClose} role="presentation">
+      <article
+        className="reader__panel"
+        onClick={(e) => e.stopPropagation()}
+        role="dialog"
+        aria-modal="true"
+        aria-label={project.title}
+      >
+        <div className="reader__bar">
+          <button
+            ref={backRef}
+            className="reader__back"
+            onClick={onClose}
+            aria-label="Close and go back"
+          >
+            ← Back
+          </button>
+          <span className="reader__bar-title">{project.no}</span>
+        </div>
+
+        <div className="reader__scroll">
+          <div className="reader__meta">
+            <span>{project.domain}</span>
+            <span className="reader__sep" aria-hidden="true">
+              /
+            </span>
+            <span>{project.role}</span>
           </div>
-          <h2 className="modal__title">{project.title}</h2>
-          <SectionLabel>{project.role}</SectionLabel>
-        </div>
 
-        <div className="modal__tags">
-          {project.tags.map((tag) => (
-            <Tag key={tag}>{tag}</Tag>
-          ))}
-        </div>
+          <h2 className="reader__title">{project.title}</h2>
+          <p className="reader__standfirst">{project.standfirst}</p>
+          <p className="reader__log">{project.log}</p>
 
-        <div className="modal__content">
-          <p className="modal__description">{project.short}</p>
-          <ul className="modal__bullets">
-            {project.bullets.map((bullet, i) => (
-              <BulletPoint key={i}>{bullet}</BulletPoint>
+          <p className="reader__notes-label">From the notes</p>
+          <ul className="reader__notes">
+            {project.notes.map((n, i) => (
+              <li key={i} className="reader__note">
+                <span className="reader__tick" aria-hidden="true">
+                  ›
+                </span>
+                <span>{n}</span>
+              </li>
             ))}
           </ul>
+
+          <p className="reader__tags">
+            {project.tags.map((t, i) => (
+              <span key={t}>
+                {t}
+                {i < project.tags.length - 1 && (
+                  <span aria-hidden="true">&nbsp;·&nbsp;</span>
+                )}
+              </span>
+            ))}
+          </p>
+
+          <button className="reader__done" onClick={onClose}>
+            ← Back to the logbook
+          </button>
         </div>
-      </div>
+      </article>
     </div>
   );
 }

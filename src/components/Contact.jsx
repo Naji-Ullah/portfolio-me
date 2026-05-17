@@ -1,67 +1,46 @@
-import SectionLabel from "./ui/SectionLabel";
+import { PERSON } from "../data/portfolio";
+import Monogram from "./Monogram";
 
-const CONTACT_LINKS = [
-  {
-    label: "Direct Email",
-    value: "najiu1836@gmail.com",
-    href: "mailto:najiu1836@gmail.com",
-  },
-  {
-    label: "Portfolio",
-    value: "naji.codes",
-    href: "https://naji.codes",
-    external: true,
-  },
-  {
-    label: "LinkedIn",
-    value: "LinkedIn",
-    href: "https://www.linkedin.com/in/naji-ullah-53222624b/",
-    external: true,
-  },
-  {
-    label: "Github",
-    value: "Github",
-    href: "https://github.com/naji-ullah",
-    external: true,
-  }
+const LINKS = [
+  { label: "Email", value: PERSON.email, href: `mailto:${PERSON.email}` },
+  { label: "Website", value: PERSON.site, href: `https://${PERSON.site}`, ext: true },
+  { label: "GitHub", value: "Naji-Ullah", href: PERSON.github, ext: true },
+  { label: "LinkedIn", value: "naji-ullah", href: PERSON.linkedin, ext: true },
 ];
-
-function ContactLink({ label, value, href, external }) {
-  const props = external ? { target: "_blank", rel: "noreferrer" } : {};
-
-  return (
-    <a href={href} className="contact__link" {...props}>
-      <span className="contact__link-label">{label}</span>
-      <span className="contact__link-value">{value}</span>
-    </a>
-  );
-}
-
-function Divider() {
-  return <div className="contact__divider" aria-hidden="true" />;
-}
 
 export default function Contact() {
   return (
     <section className="section contact" id="contact">
-      <div className="contact__bg-word" aria-hidden="true">
-        CONNECT
-      </div>
-      <div className="contact__content">
-        <SectionLabel>Inquiry</SectionLabel>
-        <h2 className="contact__headline">
-          Ready to
-          <br />
-          Collaborate?
-        </h2>
-        <div className="contact__links">
-          {CONTACT_LINKS.map((link, index) => (
-            <div key={link.label}>
-              <ContactLink {...link} />
-              {index < CONTACT_LINKS.length - 1 && <Divider />}
-            </div>
-          ))}
-        </div>
+      <header className="section__head">
+        <span className="kicker">End of the entries</span>
+        <h2 className="section__title section__title--accent">Send Word</h2>
+        <p className="section__intro">
+          If any of this is useful to you, get in touch. Email is fastest — I
+          read everything, and reply to the messages that aren&rsquo;t selling
+          me SEO.
+        </p>
+      </header>
+
+      <dl className="contact__list">
+        {LINKS.map((l) => (
+          <div key={l.label} className="contact__item">
+            <dt>{l.label}</dt>
+            <dd>
+              <a
+                href={l.href}
+                className="link-underline"
+                {...(l.ext ? { target: "_blank", rel: "noreferrer" } : {})}
+              >
+                {l.value}
+              </a>
+            </dd>
+          </div>
+        ))}
+      </dl>
+
+      <div className="seal-wrap">
+        <Monogram />
+        <p className="seal-wrap__sign">Thanks for reading this far.</p>
       </div>
     </section>
   );

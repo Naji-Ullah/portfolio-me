@@ -1,143 +1,173 @@
+// The Logbook — working notes of a software engineer.
+// First person, plain, a little dry. Facts kept; format reframed as log entries.
+
+export const PERSON = {
+  name: "Naji Ullah",
+  role: "Software engineer. Builds things, then writes them down.",
+  location: "Lahore, Pakistan",
+  email: "najiu1836@gmail.com",
+  site: "naji.codes",
+  github: "https://github.com/Naji-Ullah",
+  linkedin: "https://www.linkedin.com/in/naji-ullah-53222624b/",
+};
+
 export const PROJECTS = [
   {
     id: "lamppost",
-    index: "01",
-    domain: "SaaS",
+    no: "Entry 01",
+    domain: "Fintech",
     title: "Lamppost.io",
     role: "Front-end Engineer",
-    tags: ["React.js", "Redux Saga", "Performance"],
-    short: "Financial data platform with school org-chart tooling and optimised API pipelines.",
-    bullets: [
-      "Worked with tools like Redux Saga to manage asynchronous operations & API calls.",
-      "Built and integrated complex user features such as a school organization chart, helping represent hierarchical structures.",
-      "Collaborated closely with backend and product teams to streamline feature flow, improving data handling across the app.",
-      "Optimised various features in frontend — reduced extra API calls, enhancing the flow, loading time and Lighthouse scores.",
-      "Refactored components to follow the DRY principle, creating pure components for better maintainability.",
+    tags: ["React", "Redux Saga", "Performance"],
+    standfirst:
+      "A financial data platform that needed to stop asking its own API the same question twice.",
+    log: "I owned the school org-chart — a clear way to show who answers to whom — and then went hunting for everywhere the app double-asked the server. It was asking a lot. That kind of work is the most satisfying: nothing new on screen, everything quietly faster.",
+    notes: [
+      "Async flow on Redux Saga, kept legible.",
+      "Built the org-chart from nothing.",
+      "Trimmed redundant API calls; Lighthouse calmed down.",
+      "Split big components into small honest ones.",
+      "Sat close to backend and product so things lined up.",
     ],
   },
   {
     id: "blendgenai",
-    index: "02",
-    domain: "ARTIFICIAL INTELLIGENCE",
+    no: "Entry 02",
+    domain: "AI",
     title: "BlendGenAI",
-    role: "Full Stack Engineer",
-    tags: ["React.js", "Three.js", "Meshy AI", "OpenAI"],
-    short: "AI-powered 3D model generation platform with interactive viewer and prompt refinement.",
-    bullets: [
-      "Developed the complete React-based frontend for an AI-powered 3D model generation platform.",
-      "Integrated Three.js to build an interactive 3D model viewer on the dashboard.",
-      "Implemented Meshy AI API for model generation, enhancement, and texture application, and integrated OpenAI API for prompt refinement to improve model quality.",
-      "Ensured clean component architecture, reusable UI patterns, and optimized frontend performance across devices.",
+    role: "Full-stack Engineer",
+    tags: ["React", "Three.js", "Meshy AI", "OpenAI"],
+    standfirst: "Type a sentence, get a 3D model you can spin around.",
+    log: "I built the whole front end and the viewer you inspect models in. The quietly clever part was running people's vague prompts through OpenAI first, so the generator had a fighting chance before it tried to sculpt “cool dragon thing”.",
+    notes: [
+      "Entire React front end.",
+      "Three.js model viewer on the dashboard.",
+      "Meshy AI for generate, enhance and texture.",
+      "OpenAI prompt clean-up before generation.",
+      "Smooth on phones, not just my laptop.",
     ],
   },
   {
     id: "scimedics",
-    index: "03",
-    domain: "HEALTH TECH",
+    no: "Entry 03",
+    domain: "Health",
     title: "SciMedics",
     role: "Backend Engineer",
     tags: ["Next.js", "Django", "DRF", "PostgreSQL"],
-    short: "Medical SaaS platform for survey workflows, automated report generation and secure API design.",
-    bullets: [
-      "Contributed to a medical SaaS platform built with Next.js and Django, focusing on backend development and API integrations.",
-      "Implemented survey workflows and automated report generation using Django.",
-      "Worked with PostgreSQL and utilized Django REST Framework (DRF) to design scalable and secure APIs.",
-      "Integrated multiple internal tools and libraries, improving data flow, validation, and backend processing pipelines.",
+    standfirst:
+      "A medical SaaS where the rules are strict and the data is not allowed to be wrong.",
+    log: "I lived on the backend — survey workflows, the report generation, and APIs that had to be fast and appropriately paranoid. Health software is a good teacher. It does not forgive “probably fine”.",
+    notes: [
+      "Survey workflows and report generation in Django.",
+      "APIs on DRF over PostgreSQL.",
+      "Access kept deliberately tight.",
+      "Several internal tools onto one clean path.",
     ],
   },
   {
     id: "marketsmart",
-    index: "04",
-    domain: "Business",
-    title: "MarketSmart - Pursuit Data",
-    role: "Full Stack Engineer",
+    no: "Entry 04",
+    domain: "Data",
+    title: "MarketSmart — Pursuit Data",
+    role: "Full-stack Engineer",
     tags: ["Next.js", "Firebase", "Stripe", "Algolia"],
-    short: "Scalable data platform scraping business leads from five sources with real-time Firebase storage.",
-    bullets: [
-      "Built a scalable Next.js + Firebase platform that scraped business data from five different websites and stored it in Firestore for real-time access.",
-      "Integrated multiple Firebase Extensions including Stripe billing, Algolia search, and email automation via SendGrid.",
-      "Developed role-based access and authentication using customClaims to secure user data.",
-      "Participated in code reviews, sprint planning to maintain code quality and team productivity.",
+    standfirst:
+      "Pulled business leads off five different sites and kept them searchable the moment they landed.",
+    log: "Scrapers feeding Firestore, billing on Stripe, search on Algolia, and auth that made sure people only ever saw their own pile. Five sources is four more than anyone hopes for. It mostly held.",
+    notes: [
+      "Next.js + Firebase, scraping five sources.",
+      "Firebase Extensions: Stripe, Algolia, SendGrid.",
+      "Role-based auth via custom claims.",
+      "Code reviews and sprint planning, properly.",
     ],
   },
   {
     id: "fencedeck",
-    index: "05",
-    domain: "Business",
+    no: "Entry 05",
+    domain: "Operations",
     title: "Fence & Deck Connection",
-    role: "Full Stack Engineer",
+    role: "Full-stack Engineer",
     tags: ["React", "Firebase", "Salesforce", "Square"],
-    short: "Quotation and workflow platform integrating Salesforce CRM, automated reports and Square payments.",
-    bullets: [
-      "Contributed to a React + Firebase application, enhancing workflows for quotations.",
-      "Worked with technologies like Salesforce CRM & streamlined the opp and quotes related data.",
-      "Integrated Puppeteer for automated report generation.",
-      "Implemented Firebase Cloud Functions for data synchronization across modules.",
-      "Implemented Square ACH direct and card payments using node functions.",
-      "Collaborated with end users to refine requirements and deliver highly responsive, production-ready features.",
+    standfirst: "Quoting and workflow, glued to Salesforce, paid through Square.",
+    log: "I kept quotes and opportunities in step with the CRM, automated the reports nobody wanted to make by hand, and wired up real money. Then I talked to the people actually using it, which changed more than the code did.",
+    notes: [
+      "Quoting workflows in React + Firebase.",
+      "Quote and opportunity data synced with Salesforce.",
+      "Puppeteer-generated reports.",
+      "Cloud Functions keeping modules in sync.",
+      "Square ACH and card payments via Node.",
     ],
   },
   {
     id: "ryanhomes",
-    index: "06",
-    domain: "Business",
+    no: "Entry 06",
+    domain: "Operations",
     title: "Ryan Homes Integrations",
-    role: "Full Stack Engineer",
+    role: "Full-stack Engineer",
     tags: ["React", "Firebase", "Node.js", "Salesforce"],
-    short: "Quote management system with Ryan Home API integration and optimized customer dashboards.",
-    bullets: [
-      "Contributed to a React + Firebase application, enhancing workflows for quotes management.",
-      "Made business logic to create Opps using Ryan Home API in Node function for Opp creations.",
-      "Optimized UI flow, and ensured data accuracy across dashboards and customer interactions.",
-      "Collaborated with team to refine requirements and deliver highly responsive, production-ready features.",
-      "Interacted with tools like Salesforce and gained hands-on experience with customer relation models & CRMs.",
+    standfirst:
+      "A quote system wired into the Ryan Homes API, with dashboards that finally agreed on the numbers.",
+    log: "Most of this was getting two systems to tell the same story. I wrote the Node logic that creates opportunities through their API, then spent a good while making the dashboards stop contradicting each other.",
+    notes: [
+      "Quote-management workflows in React + Firebase.",
+      "Node logic creating opportunities via the Ryan Homes API.",
+      "Dashboards reconciled and trusted.",
+      "Steady shipping with the team.",
+      "Hands-on with Salesforce and CRM models.",
     ],
   },
   {
     id: "angiesleads",
-    index: "07",
-    domain: "AUTOMATION",
-    title: "Angie's Lead Integrations",
-    role: "Automation Workflow",
+    no: "Entry 07",
+    domain: "Automation",
+    title: "Angi Lead Integrations",
+    role: "Automation",
     tags: ["Zapier", "Salesforce", "Webhooks", "API"],
-    short: "Multi-path lead integration system between Angi and Salesforce with real-time webhook processing.",
-    bullets: [
-      "Architected and deployed a multi-path lead integration system between Angi (HomeAdvisor) and Salesforce using Zapier, handling real-time Webhook data ingestion.",
-      "Engineered data normalization logic using custom lookup tables to ensure compatibility with strict Salesforce picklist constraints.",
-      "Implemented security protocols by configuring custom header authentication to secure endpoints and prevent unauthorized data injection.",
+    standfirst:
+      "A bridge from Angi into Salesforce that took webhooks live and turned away anything malformed.",
+    log: "No interface, just plumbing — multi-path lead routing on Zapier, normalised with lookup tables so it survived Salesforce's strict picklists, and locked down so the junk stayed out. Unglamorous, and very satisfying when it just runs.",
+    notes: [
+      "Multi-path lead pipeline, Angi → Salesforce, on Zapier.",
+      "Real-time webhook ingestion.",
+      "Lookup-table normalisation for strict picklists.",
+      "Custom header auth on the endpoints.",
     ],
   },
 ];
 
-export const SKILLS = [
+// Instruments — grouped by where they sit in the work, with a line of context.
+export const INSTRUMENTS = [
   {
     label: "Frontend",
+    note: "What the user actually touches.",
     items: [
       "JavaScript",
-      "React.js",
-      "Next.js",
       "TypeScript",
-      "Redux Toolkit / Redux Saga",
-      "HTML5 / CSS3",
-      "Tailwind CSS",
+      "React",
+      "Next.js",
+      "Redux Toolkit / Saga",
+      "HTML & CSS",
+      "Tailwind",
       "Material UI",
     ],
   },
   {
     label: "Backend",
+    note: "Where the rules and the data live.",
     items: [
       "Django",
-      "DRF",
-      "Firebase (Firestore / Auth / Functions)",
-      "RESTful APIs",
+      "Django REST Framework",
+      "Firebase — Firestore, Auth, Functions",
+      "REST APIs",
       "PostgreSQL",
-      "Serverless Architecture",
+      "Serverless",
     ],
   },
   {
-    label: "DevOps & Tools",
+    label: "On the bench",
+    note: "Everything that helps the other two ship.",
     items: [
-      "Git / GitHub",
+      "Git & GitHub",
       "Docker",
       "AWS EC2",
       "Firebase Hosting",
@@ -148,25 +178,27 @@ export const SKILLS = [
   },
 ];
 
+// Time served — written as prose, because nobody talks in bullet points.
 export const EXPERIENCE = {
   company: "Devflovv",
   role: "Associate Software Engineer",
   period: "Feb 2025 — Present",
-  bullets: [
-    "Built modular, responsive frontends using React and Next.js.",
-    "Implemented role-based routing and scalable state management with Redux Saga & Redux Toolkit.",
-    "Developed RESTful APIs and backend logic using Django and DRF.",
-    "Integrated third-party APIs — AI tools, Stripe payments, email automation.",
-    "Worked with Firebase services including Firestore, Auth and Cloud Functions.",
-    "Improved performance by optimising API calls and state handling.",
-    "Collaborated in agile sprints — code reviews, sprint planning, cross-functional delivery.",
+  log: [
+    "I'm an associate software engineer at Devflovv. In practice that means building responsive front ends in React and Next.js, writing the Django and DRF that sit behind them, and integrating whatever third-party API the work needs — AI services, Stripe, email -  usually after reading the docs so nobody else has to.",
+    "I work across Firebase, Firestore, Auth, Cloud Functions — set up routing and state with Redux Toolkit and Saga, and spend a fair amount of time chasing performance problems, which are almost always a redundant API call wearing a disguise. The rest is the unglamorous part: reviews, planning, and showing up.",
   ],
 };
 
 export const EDUCATION = {
   degree: "BS Software Engineering",
-  school: "COMSATS University Lahore",
-  period: "2024 - Current"
+  school: "COMSATS University, Lahore",
+  period: "2024 — Present",
+  aside: "Studying it by night, applying it by deadline.",
 };
 
-export const NAV_LINKS = ["Skills", "Projects", "Experience", "Contact"];
+export const NAV_LINKS = [
+  { label: "Logbook", id: "logbook" },
+  { label: "Instruments", id: "instruments" },
+  { label: "Time Served", id: "time" },
+  { label: "Send Word", id: "contact" },
+];

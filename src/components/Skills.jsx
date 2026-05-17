@@ -1,72 +1,48 @@
-import { useState, useEffect, useRef } from "react";
-import SectionLabel from "./ui/SectionLabel";
-import Tag from "./ui/Tag";
-import { SKILLS } from "../data/portfolio";
+import useReveal from "../hooks/useReveal";
+import { INSTRUMENTS } from "../data/portfolio";
 
-function SkillGroup({ label, items, index }) {
-  const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
-
+function Row({ label, note, items }) {
+  const [ref, shown] = useReveal();
   return (
-    <div 
-      ref={ref}
-      className={`skills__group${isVisible ? " skills__group--visible" : ""}`}
-      style={{ animationDelay: `${index * 0.1}s` }}
-    >
-      <div className="skills__group-header">
-        <span className="skills__group-number">0{index + 1}</span>
-        <h3 className="skills__group-label">{label}</h3>
+    <div ref={ref} className={`inst__row${shown ? " is-in" : ""}`}>
+      <div className="inst__head">
+        <h3 className="inst__label">{label}</h3>
+        <p className="inst__note">{note}</p>
       </div>
-      <div className="skills__tags">
-        {items.map((item) => (
-          <Tag key={item}>{item}</Tag>
+      <p className="inst__items">
+        {items.map((item, i) => (
+          <span key={item}>
+            {item}
+            {i < items.length - 1 && (
+              <span className="inst__dot" aria-hidden="true">
+                &nbsp;·&nbsp;
+              </span>
+            )}
+          </span>
         ))}
-      </div>
+      </p>
     </div>
   );
 }
 
 export default function Skills() {
   return (
-    <section className="section section--dark" id="skills">
-      <div className="section__header">
-        <SectionLabel>Capabilities</SectionLabel>
-        <h2 className="section__title">
-          Technical
-          <br />
-          Arsenal
-        </h2>
-      </div>
-      <div className="skills__grid">
-        {SKILLS.map((group, index) => (
-          <SkillGroup 
-            key={group.label} 
-            label={group.label} 
+    <section className="section" id="instruments">
+      <header className="section__head">
+        <span className="kicker">The toolkit, honestly</span>
+        <h2 className="section__title">The Instruments</h2>
+        <p className="section__intro">
+          Tools I actually reach for — not a wishlist, not a word cloud.
+        </p>
+      </header>
+
+      <div className="inst">
+        {INSTRUMENTS.map((group) => (
+          <Row
+            key={group.label}
+            label={group.label}
+            note={group.note}
             items={group.items}
-            index={index}
           />
         ))}
       </div>

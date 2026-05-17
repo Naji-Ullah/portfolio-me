@@ -1,26 +1,19 @@
-const FOOTER_LINKS = [
-  { label: "GitHub", href: "https://github.com/Naji-Ullah" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/in/naji-ullah-53222624b/" },
-  { label: "Website", href: "https://naji.codes" },
-];
-
-function FooterLink({ label, href }) {
-  return (
-    <a href={href} target="_blank" rel="noreferrer" className="footer__link">
-      {label}
-    </a>
-  );
-}
+import { PERSON } from "../data/portfolio";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
     <footer className="footer">
-      <span className="footer__copy">© 2026 Naji Ullah. Architectural Precision.</span>
-      <div className="footer__links">
-        {FOOTER_LINKS.map((link) => (
-          <FooterLink key={link.label} {...link} />
-        ))}
-      </div>
+      <p className="footer__colophon">
+        Set in Fraunces &amp; Newsreader. Hand-built, no template, kept
+        deliberately quiet.
+      </p>
+      <p className="footer__copy">
+        © {year} {PERSON.name} ·{" "}
+        <a href="#top" className="link-underline">
+          Back to top
+        </a>
+      </p>
     </footer>
   );
 }

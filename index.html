@@ -1,10 +1,82 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>naji.codes</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>Naji Ullah — Software Engineer</title>
+    <meta
+      name="description"
+      content="The working logbook of Naji Ullah — a full-stack software engineer in Lahore. React, Next.js, Django and Firebase. Project notes, experience and contact."
+    />
+    <meta name="author" content="Naji Ullah" />
+    <link rel="canonical" href="https://naji.codes/" />
+    <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#15110d" media="(prefers-color-scheme: dark)" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Naji Ullah — Software Engineer" />
+    <meta
+      property="og:description"
+      content="The working logbook of a full-stack engineer — React, Next.js, Django, Firebase. A plainly-set record of the work."
+    />
+    <meta property="og:url" content="https://naji.codes/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Naji Ullah — Software Engineer" />
+    <meta
+      name="twitter:description"
+      content="Full-stack engineer working with React, Next.js, Django and Firebase."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      // Set the theme before first paint so there is no flash.
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var system = window.matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+          document.documentElement.setAttribute(
+            "data-theme",
+            saved || system
+          );
+        } catch (e) {}
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Naji Ullah",
+        "jobTitle": "Software Engineer",
+        "url": "https://naji.codes/",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lahore",
+          "addressCountry": "PK"
+        },
+        "knowsAbout": [
+          "React",
+          "Next.js",
+          "Django",
+          "Firebase",
+          "TypeScript"
+        ],
+        "sameAs": [
+          "https://github.com/Naji-Ullah",
+          "https://www.linkedin.com/in/naji-ullah-53222624b/"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -4,27 +4,20 @@ export default function ScrollToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setVisible(window.scrollY > 400);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setVisible(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  if (!visible) return null;
 
   return (
     <button
-      className="scroll-to-top"
-      onClick={scrollToTop}
-      aria-label="Scroll to top"
+      type="button"
+      className={`to-top${visible ? " is-visible" : ""}`}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Back to top"
+      tabIndex={visible ? 0 : -1}
     >
-      ↑
+      ↑ Top
     </button>
   );
 }
