@@ -21,7 +21,7 @@ export const PROJECTS = [
     tags: ["React", "Redux Saga", "Performance"],
     standfirst:
       "A financial data platform that needed to stop asking its own API the same question twice.",
-    log: "I owned the school org-chart — a clear way to show who answers to whom — and then went hunting for everywhere the app double-asked the server. It was asking a lot. That kind of work is the most satisfying: nothing new on screen, everything quietly faster.",
+    log: "I owned the school org-chart - a clear way to show who answers to whom - and then went hunting for everywhere the app double-asked the server. It was asking a lot. That kind of work is the most satisfying: nothing new on screen, everything quietly faster.",
     notes: [
       "Async flow on Redux Saga, kept legible.",
       "Built the org-chart from nothing.",
@@ -38,7 +38,7 @@ export const PROJECTS = [
     role: "Full-stack Engineer",
     tags: ["React", "Three.js", "Meshy AI", "OpenAI"],
     standfirst: "Type a sentence, get a 3D model you can spin around.",
-    log: "I built the whole front end and the viewer you inspect models in. The quietly clever part was running people's vague prompts through OpenAI first, so the generator had a fighting chance before it tried to sculpt “cool dragon thing”.",
+    log: "I built the whole front end and the viewer you inspect models in. The quietly clever part was running people's vague prompts through OpenAI first, so the generator had a fighting chance before it tried to sculpt 'cool dragon thing'.",
     notes: [
       "Entire React front end.",
       "Three.js model viewer on the dashboard.",
@@ -56,7 +56,7 @@ export const PROJECTS = [
     tags: ["Next.js", "Django", "DRF", "PostgreSQL"],
     standfirst:
       "A medical SaaS where the rules are strict and the data is not allowed to be wrong.",
-    log: "I lived on the backend — survey workflows, the report generation, and APIs that had to be fast and appropriately paranoid. Health software is a good teacher. It does not forgive “probably fine”.",
+    log: "I lived on the backend - survey workflows, the report generation, and APIs that had to be fast and appropriately paranoid. Health software is a good teacher. It does not forgive 'probably fine'.",
     notes: [
       "Survey workflows and report generation in Django.",
       "APIs on DRF over PostgreSQL.",
@@ -68,7 +68,7 @@ export const PROJECTS = [
     id: "marketsmart",
     no: "Entry 04",
     domain: "Data",
-    title: "MarketSmart — Pursuit Data",
+    title: "MarketSmart - Pursuit Data",
     role: "Full-stack Engineer",
     tags: ["Next.js", "Firebase", "Stripe", "Algolia"],
     standfirst:
@@ -125,7 +125,7 @@ export const PROJECTS = [
     tags: ["Zapier", "Salesforce", "Webhooks", "API"],
     standfirst:
       "A bridge from Angi into Salesforce that took webhooks live and turned away anything malformed.",
-    log: "No interface, just plumbing — multi-path lead routing on Zapier, normalised with lookup tables so it survived Salesforce's strict picklists, and locked down so the junk stayed out. Unglamorous, and very satisfying when it just runs.",
+    log: "No interface, just plumbing - multi-path lead routing on Zapier, normalised with lookup tables so it survived Salesforce's strict picklists, and locked down so the junk stayed out. Unglamorous, and very satisfying when it just runs.",
     notes: [
       "Multi-path lead pipeline, Angi → Salesforce, on Zapier.",
       "Real-time webhook ingestion.",
@@ -135,7 +135,7 @@ export const PROJECTS = [
   },
 ];
 
-// Instruments — grouped by where they sit in the work, with a line of context.
+// Instruments - grouped by where they sit in the work, with a line of context.
 export const INSTRUMENTS = [
   {
     label: "Frontend",
@@ -157,7 +157,7 @@ export const INSTRUMENTS = [
     items: [
       "Django",
       "Django REST Framework",
-      "Firebase — Firestore, Auth, Functions",
+      "Firebase - Firestore, Auth, Functions",
       "REST APIs",
       "PostgreSQL",
       "Serverless",
@@ -178,21 +178,21 @@ export const INSTRUMENTS = [
   },
 ];
 
-// Time served — written as prose, because nobody talks in bullet points.
+// Time served - written as prose, because nobody talks in bullet points.
 export const EXPERIENCE = {
   company: "Devflovv",
   role: "Associate Software Engineer",
-  period: "Feb 2025 — Present",
+  period: "Feb 2025 - Present",
   log: [
-    "I'm an associate software engineer at Devflovv. In practice that means building responsive front ends in React and Next.js, writing the Django and DRF that sit behind them, and integrating whatever third-party API the work needs — AI services, Stripe, email -  usually after reading the docs so nobody else has to.",
-    "I work across Firebase, Firestore, Auth, Cloud Functions — set up routing and state with Redux Toolkit and Saga, and spend a fair amount of time chasing performance problems, which are almost always a redundant API call wearing a disguise. The rest is the unglamorous part: reviews, planning, and showing up.",
+    "I'm an associate software engineer at Devflovv. In practice that means building responsive front ends in React and Next.js, writing the Django and DRF that sit behind them, and integrating whatever third-party API the work needs - AI services, Stripe, email - usually after reading the docs so nobody else has to.",
+    "I work across Firebase, Firestore, Auth, Cloud Functions - set up routing and state with Redux Toolkit and Saga, and spend a fair amount of time chasing performance problems, which are almost always a redundant API call wearing a disguise. The rest is the unglamorous part: reviews, planning, and showing up.",
   ],
 };
 
 export const EDUCATION = {
   degree: "BS Software Engineering",
   school: "COMSATS University, Lahore",
-  period: "2024 — Present",
+  period: "2024 - Present",
   aside: "Studying it by night, applying it by deadline.",
 };
 
