@@ -26,15 +26,15 @@
 }
 
 [data-theme="dark"] {
-  --paper: #15110d;
-  --paper-2: #1d1813;
-  --ink: #ece3d2;
-  --ink-soft: #b3a88f;
-  --ink-faint: #7c7259;
-  --rule: rgba(236, 227, 210, 0.22);
-  --rule-soft: rgba(236, 227, 210, 0.09);
-  --accent: #cd8156;
-  --grain: 0.04;
+  --paper: #0a0a0a;
+  --paper-2: #141414;
+  --ink: #f4f4f1;
+  --ink-soft: #a1a1a1;
+  --ink-faint: #6b6b6b;
+  --rule: rgba(244, 244, 241, 0.16);
+  --rule-soft: rgba(244, 244, 241, 0.07);
+  --accent: #c8ff3a;
+  --grain: 0.03;
 }
 
 *,
@@ -734,6 +734,66 @@ main {
   color: var(--accent);
 }
 
+/* ---- the strip (marquee) --------------------------------------------- */
+
+.marquee {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  border-top: 1px solid var(--rule-soft);
+  border-bottom: 1px solid var(--rule-soft);
+  background: var(--paper-2);
+  padding: 16px 0;
+  /* fade the edges so items enter and leave softly */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 8%,
+    #000 92%,
+    transparent
+  );
+}
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--serif-body);
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+.marquee__sep {
+  margin: 0 28px;
+  color: var(--accent);
+  font-size: 0.7rem;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track {
+    animation: none;
+  }
+}
+
 /* ---- the instruments -------------------------------------------------- */
 
 .inst__row {
@@ -1057,5 +1117,124 @@ main {
   .served__para {
     opacity: 1;
     transform: none;
+  }
+}
+.contact__cta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--serif-body);
+  font-size: 0.92rem;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 1px;
+  transition: all 0.3s var(--ease);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--paper);
+  border: 1px solid var(--accent);
+}
+
+.btn--primary:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+}
+
+.btn--ghost:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.contact__cta-note {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--ink-faint);
+}
+
+/* Fluid responsive breakdown for small screens */
+@media (max-width: 600px) {
+  .contact__cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}.contact__cta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: clamp(40px, 6vw, 64px);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--serif-body);
+  font-size: 0.92rem;
+  text-decoration: none;
+  padding: 10px 22px;
+  border-radius: 1px;
+  transition: all 0.3s var(--ease);
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: var(--paper);
+  border: 1px solid var(--accent);
+}
+
+.btn--primary:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  border: 1px solid var(--rule);
+}
+
+.btn--ghost:hover {
+  color: var(--ink);
+  border-color: var(--ink);
+  transform: translateY(-1px);
+}
+
+.contact__cta-note {
+  font-size: 0.88rem;
+  font-style: italic;
+  color: var(--ink-faint);
+}
+
+/* Fluid responsive breakdown for small screens */
+@media (max-width: 600px) {
+  .contact__cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .btn {
+    width: 100%;
+    justify-content: center;
   }
 }

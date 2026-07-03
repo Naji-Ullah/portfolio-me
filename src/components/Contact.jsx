@@ -1,11 +1,21 @@
 import { PERSON } from "../data/portfolio";
 import Monogram from "./Monogram";
 
+const GMAIL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+  PERSON.email
+)}&su=${encodeURIComponent("Project / opportunity")}&body=${encodeURIComponent(
+  "Hi Naji,\n\nI came across the logbook and wanted to reach out about:\n\n— \n\n(Your message)\n"
+)}`;
+
 const LINKS = [
   { label: "Email", value: PERSON.email, href: `mailto:${PERSON.email}` },
-  { label: "Website", value: PERSON.site, href: `https://${PERSON.site}`, ext: true },
   { label: "GitHub", value: "Naji-Ullah", href: PERSON.github, ext: true },
-  { label: "LinkedIn", value: "naji-ullah", href: PERSON.linkedin, ext: true },
+  {
+    label: "LinkedIn",
+    value: "naji-ullah",
+    href: PERSON.linkedin,
+    ext: true,
+  },
 ];
 
 export default function Contact() {
@@ -20,6 +30,30 @@ export default function Contact() {
           me SEO.
         </p>
       </header>
+
+      {/* Structured CTA block */}
+      <div className="contact__cta">
+        <a
+          className="btn btn--primary"
+          href={GMAIL}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Compose in Gmail
+          <span aria-hidden="true"> →</span>
+        </a>
+        <a
+          className="btn btn--ghost"
+          href={`mailto:${PERSON.email}?subject=${encodeURIComponent(
+            "Project / opportunity"
+          )}&body=${encodeURIComponent(
+            "Hi Naji,\n\nI came across the logbook and wanted to reach out about:\n\n— \n\n(Your message)\n"
+          )}`}
+        >
+          Default mail app
+        </a>
+        <span className="contact__cta-note">replies within ~24h</span>
+      </div>
 
       <dl className="contact__list">
         {LINKS.map((l) => (

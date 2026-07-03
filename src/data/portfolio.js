@@ -1,6 +1,3 @@
-// The Logbook — working notes of a software engineer.
-// First person, plain, a little dry. Facts kept; format reframed as log entries.
-
 export const PERSON = {
   name: "Naji Ullah",
   role: "Software engineer. Builds things, then writes them down.",
@@ -135,7 +132,6 @@ export const PROJECTS = [
   },
 ];
 
-// Instruments - grouped by where they sit in the work, with a line of context.
 export const INSTRUMENTS = [
   {
     label: "Frontend",
@@ -178,7 +174,6 @@ export const INSTRUMENTS = [
   },
 ];
 
-// Time served - written as prose, because nobody talks in bullet points.
 export const EXPERIENCE = {
   company: "Devflovv",
   role: "Associate Software Engineer",
@@ -201,4 +196,19 @@ export const NAV_LINKS = [
   { label: "Instruments", id: "instruments" },
   { label: "Time Served", id: "time" },
   { label: "Send Word", id: "contact" },
+];
+
+export const MARQUEE_ITEMS = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Django",
+  "Firebase",
+  "Redux Saga",
+  "Three.js",
+  "Stripe",
+  "AWS",
+  "Salesforce",
+  "PostgreSQL",
+  "Zapier",
 ];
