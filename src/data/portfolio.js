@@ -176,10 +176,10 @@ export const INSTRUMENTS = [
 
 export const EXPERIENCE = {
   company: "Devflovv",
-  role: "Associate Software Engineer",
+  role: "Software Engineer",
   period: "Feb 2025 - Present",
   log: [
-    "I'm an associate software engineer at Devflovv. In practice that means building responsive front ends in React and Next.js, writing the Django and DRF that sit behind them, and integrating whatever third-party API the work needs - AI services, Stripe, email - usually after reading the docs so nobody else has to.",
+    "I'm an software engineer at Devflovv. In practice that means building responsive front ends in React and Next.js, writing the Django and DRF that sit behind them, and integrating whatever third-party API the work needs - AI services, Stripe, email - usually after reading the docs so nobody else has to.",
     "I work across Firebase, Firestore, Auth, Cloud Functions - set up routing and state with Redux Toolkit and Saga, and spend a fair amount of time chasing performance problems, which are almost always a redundant API call wearing a disguise. The rest is the unglamorous part: reviews, planning, and showing up.",
   ],
 };
