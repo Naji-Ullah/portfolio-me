@@ -5,35 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <title>Naji Ullah — Software Engineer</title>
+    <title>Naji Ullah — Full-Stack Software Engineer, Lahore</title>
     <meta
       name="description"
-      content="The working logbook of Naji Ullah — a full-stack software engineer in Lahore. React, Next.js, Django and Firebase. Project notes, experience and contact."
+      content="Portfolio of Naji Ullah, a full-stack software engineer in Lahore — React, Next.js, Django, Firebase — presented as Borehole Log NJ-01: seven shipped projects logged as strata, drilled top to bottom."
     />
     <meta name="author" content="Naji Ullah" />
     <link rel="canonical" href="https://naji.codes/" />
-    <meta name="theme-color" content="#f3eee2" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#15110d" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f2ede1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#131110" media="(prefers-color-scheme: dark)" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Naji Ullah — Software Engineer" />
+    <meta property="og:title" content="Naji Ullah — Full-Stack Software Engineer · Borehole Log NJ-01" />
     <meta
       property="og:description"
-      content="The working logbook of a full-stack engineer — React, Next.js, Django, Firebase. A plainly-set record of the work."
+      content="A portfolio drilled as a geotechnical core-sample log: seven projects as strata, skills as a lab assay, a degree still forming at bedrock. React, Next.js, Django, Firebase."
     />
     <meta property="og:url" content="https://naji.codes/" />
     <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Naji Ullah — Software Engineer" />
+    <meta name="twitter:title" content="Naji Ullah — Full-Stack Software Engineer · Borehole Log NJ-01" />
     <meta
       name="twitter:description"
-      content="Full-stack engineer working with React, Next.js, Django and Firebase."
+      content="Full-stack engineer working with React, Next.js, Django and Firebase. Scroll to drill."
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/fonts/archivo-var.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
 
     <script>
@@ -44,10 +45,7 @@
           var system = window.matchMedia("(prefers-color-scheme: dark)").matches
             ? "dark"
             : "light";
-          document.documentElement.setAttribute(
-            "data-theme",
-            saved || system
-          );
+          document.documentElement.setAttribute("data-theme", saved || system);
         } catch (e) {}
       })();
     </script>
@@ -55,25 +53,125 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Naji Ullah",
-        "jobTitle": "Software Engineer",
-        "url": "https://naji.codes/",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Lahore",
-          "addressCountry": "PK"
-        },
-        "knowsAbout": [
-          "React",
-          "Next.js",
-          "Django",
-          "Firebase",
-          "TypeScript"
-        ],
-        "sameAs": [
-          "https://github.com/Naji-Ullah",
-          "https://www.linkedin.com/in/naji-ullah-53222624b/"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://naji.codes/#naji",
+            "name": "Naji Ullah",
+            "jobTitle": "Full-Stack Software Engineer",
+            "email": "mailto:najiu1836@gmail.com",
+            "url": "https://naji.codes/",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lahore",
+              "addressCountry": "PK"
+            },
+            "worksFor": {
+              "@type": "Organization",
+              "name": "Devflovv"
+            },
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "COMSATS University, Lahore"
+            },
+            "knowsAbout": [
+              "React",
+              "Next.js",
+              "TypeScript",
+              "Django",
+              "Django REST Framework",
+              "Firebase",
+              "PostgreSQL",
+              "Redux",
+              "Salesforce integration"
+            ],
+            "sameAs": [
+              "https://github.com/Naji-Ullah",
+              "https://www.linkedin.com/in/naji-ullah-53222624b/"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "url": "https://naji.codes/",
+            "name": "Borehole Log NJ-01 — Naji Ullah",
+            "author": { "@id": "https://naji.codes/#naji" }
+          },
+          {
+            "@type": "ItemList",
+            "name": "Selected work",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "Lamppost.io",
+                  "url": "https://naji.codes/#lamppost",
+                  "description": "Fintech data platform: Redux Saga async flow, org-chart feature, redundant API calls eliminated."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "BlendGenAI",
+                  "url": "https://naji.codes/#blendgenai",
+                  "description": "Text-to-3D web app: full React front end, Three.js model viewer, OpenAI prompt refinement, Meshy AI generation."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "SciMedics",
+                  "url": "https://naji.codes/#scimedics",
+                  "description": "Medical SaaS backend: Django REST Framework APIs over PostgreSQL, survey workflows and report generation."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "MarketSmart — Pursuit Data",
+                  "url": "https://naji.codes/#marketsmart",
+                  "description": "Lead platform scraping five sources into Firestore with Stripe billing and Algolia search."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "Fence & Deck Connection",
+                  "url": "https://naji.codes/#fencedeck",
+                  "description": "Quoting and workflow tool synced with Salesforce, Square payments, Puppeteer-generated reports."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "Ryan Homes Integrations",
+                  "url": "https://naji.codes/#ryanhomes",
+                  "description": "Quote management wired into the Ryan Homes API with reconciled dashboards, React + Firebase + Node."
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 7,
+                "item": {
+                  "@type": "CreativeWork",
+                  "name": "Angi Lead Integrations",
+                  "url": "https://naji.codes/#angiesleads",
+                  "description": "Zapier webhook pipeline routing Angi leads into Salesforce with lookup-table normalisation and header auth."
+                }
+              }
+            ]
+          }
         ]
       }
     </script>

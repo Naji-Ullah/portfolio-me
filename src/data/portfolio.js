@@ -19,6 +19,10 @@ export const PROJECTS = [
     standfirst:
       "A financial data platform that needed to stop asking its own API the same question twice.",
     log: "I owned the school org-chart - a clear way to show who answers to whom - and then went hunting for everywhere the app double-asked the server. It was asking a lot. That kind of work is the most satisfying: nothing new on screen, everything quietly faster.",
+    correction: {
+      logged: "Optimized API performance across the platform.",
+      corrected: "Stopped asking the server the same question twice.",
+    },
     notes: [
       "Async flow on Redux Saga, kept legible.",
       "Built the org-chart from nothing.",
@@ -54,6 +58,10 @@ export const PROJECTS = [
     standfirst:
       "A medical SaaS where the rules are strict and the data is not allowed to be wrong.",
     log: "I lived on the backend - survey workflows, the report generation, and APIs that had to be fast and appropriately paranoid. Health software is a good teacher. It does not forgive 'probably fine'.",
+    correction: {
+      logged: "Implemented secure healthcare data workflows.",
+      corrected: "Made the database refuse to be wrong.",
+    },
     notes: [
       "Survey workflows and report generation in Django.",
       "APIs on DRF over PostgreSQL.",
@@ -123,6 +131,10 @@ export const PROJECTS = [
     standfirst:
       "A bridge from Angi into Salesforce that took webhooks live and turned away anything malformed.",
     log: "No interface, just plumbing - multi-path lead routing on Zapier, normalised with lookup tables so it survived Salesforce's strict picklists, and locked down so the junk stayed out. Unglamorous, and very satisfying when it just runs.",
+    correction: {
+      logged: "Developed integration middleware solutions.",
+      corrected: "Plumbing. Proud of it.",
+    },
     notes: [
       "Multi-path lead pipeline, Angi → Salesforce, on Zapier.",
       "Real-time webhook ingestion.",
@@ -174,15 +186,28 @@ export const INSTRUMENTS = [
   },
 ];
 
-export const EXPERIENCE = {
-  company: "Devflovv",
-  role: "Software Engineer",
-  period: "Feb 2025 - Present",
-  log: [
-    "I'm an software engineer at Devflovv. In practice that means building responsive front ends in React and Next.js, writing the Django and DRF that sit behind them, and integrating whatever third-party API the work needs - AI services, Stripe, email - usually after reading the docs so nobody else has to.",
-    "I work across Firebase, Firestore, Auth, Cloud Functions - set up routing and state with Redux Toolkit and Saga, and spend a fair amount of time chasing performance problems, which are almost always a redundant API call wearing a disguise. The rest is the unglamorous part: reviews, planning, and showing up.",
-  ],
-};
+export const EXPERIENCE = [
+  {
+    id: "strumlines",
+    company: "struMLines",
+    role: "Software Engineer",
+    period: "Nov 2025 - Jul 2026",
+    log: [
+      "Software engineer at struMLines, where the job title said 'software' and declined to be more specific. I built mobile apps, web apps, and automations, whichever one was on fire that week. 'Cross-platform' is a lovely word. People say it the way sailors describe weather they haven't met yet.",
+      "The automations were my favourite kind of work: software whose entire ambition is that nobody ever has to think about it again. Some of it is still running somewhere in the dark, unthanked. That's the good ending.",
+    ],
+  },
+  {
+    id: "devflovv",
+    company: "Devflovv",
+    role: "Software Engineer",
+    period: "Feb 2025 - June 2026",
+    log: [
+      "I was a software engineer at Devflovv. In practice that meant building responsive front ends in React and Next.js, writing the Django and DRF that sat behind them, and integrating whatever third-party API the work needed - AI services, Stripe, email - usually after reading the docs so nobody else had to.",
+      "I worked across Firebase, Firestore, Auth, Cloud Functions - set up routing and state with Redux Toolkit and Saga, and spent a fair amount of time chasing performance problems, which are almost always a redundant API call wearing a disguise. The rest is the unglamorous part: reviews, planning, and showing up.",
+    ],
+  },
+];
 
 export const EDUCATION = {
   degree: "BS Software Engineering",
@@ -191,24 +216,3 @@ export const EDUCATION = {
   aside: "Studying it by night, applying it by deadline.",
 };
 
-export const NAV_LINKS = [
-  { label: "Logbook", id: "logbook" },
-  { label: "Instruments", id: "instruments" },
-  { label: "Time Served", id: "time" },
-  { label: "Send Word", id: "contact" },
-];
-
-export const MARQUEE_ITEMS = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Django",
-  "Firebase",
-  "Redux Saga",
-  "Three.js",
-  "Stripe",
-  "AWS",
-  "Salesforce",
-  "PostgreSQL",
-  "Zapier",
-];
