@@ -53,8 +53,8 @@ export default function TitlePlate() {
         </p>
 
         <h1 className="plate__name">
-          <span className="plate__eyebrow mono">DRILLED BY</span>
-          <span className="plate__big">Naji Ullah</span>
+          <span className="plate__eyebrow mono">DRILLED BY</span>{" "}
+          <span className="plate__big">Naji Ullah</span>{" "}
           <span className="plate__role">Full-Stack Software Engineer — Lahore</span>
         </h1>
 

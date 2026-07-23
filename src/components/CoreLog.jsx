@@ -25,15 +25,19 @@ export default function CoreLog({ project: p }) {
         </p>
       )}
 
-      <h4 className="corelog__sub mono">FIELD OBSERVATIONS</h4>
-      <ul className="corelog__notes">
+      <p id={`${p.id}-notes-label`} className="corelog__sub mono">
+        FIELD OBSERVATIONS
+      </p>
+      <ul className="corelog__notes" aria-labelledby={`${p.id}-notes-label`}>
         {p.notes.map((n) => (
           <li key={n}>{n}</li>
         ))}
       </ul>
 
-      <h4 className="corelog__sub mono">INCLUSIONS DETECTED</h4>
-      <ul className="chips">
+      <p id={`${p.id}-tags-label`} className="corelog__sub mono">
+        INCLUSIONS DETECTED
+      </p>
+      <ul className="chips" aria-labelledby={`${p.id}-tags-label`}>
         {p.tags.map((t) => (
           <li key={t} className="chip-static mono">
             {t}
