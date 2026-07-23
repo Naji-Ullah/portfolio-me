@@ -1,0 +1,7 @@
+# Borehole Log NJ-01 — naji.codes
+# Single-page portfolio. Everything here is meant to be crawled.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://naji.codes/sitemap.xml

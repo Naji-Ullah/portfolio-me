@@ -1,0 +1,36 @@
+# Naji Ullah — Borehole Log NJ-01
+
+Portfolio of Naji Ullah, a full-stack software engineer based in Lahore, Pakistan.
+Works in React, Next.js, TypeScript, Django / Django REST Framework, Firebase and
+PostgreSQL. The site is a single page presented as a geotechnical core-sample log:
+seven shipped projects and two roles are logged as strata, drilled top to bottom,
+with a skills "lab assay" and an in-progress degree at bedrock. The costume is
+fictional; every name, date, role and project on the page is real.
+
+Contact: najiu1836@gmail.com · https://github.com/Naji-Ullah · https://www.linkedin.com/in/naji-ullah-53222624b/
+
+## Key pages
+
+- https://naji.codes/: The entire site. One page, one document; all sections below are anchors on it.
+
+## Sections (anchors on the homepage)
+
+- /#strumlines: struMLines, Software Engineer (Nov 2025 – Jul 2026) — mobile apps, web apps and automations.
+- /#devflovv: Devflovv, Software Engineer (Feb 2025 – Jun 2026) — React/Next.js front ends, Django + DRF behind them, Firebase, Redux Toolkit and Saga, third-party API integration.
+- /#lamppost: Lamppost.io (Fintech, Front-end Engineer) — Redux Saga async flow, school org-chart feature, redundant API calls eliminated.
+- /#blendgenai: BlendGenAI (AI, Full-stack Engineer) — text-to-3D web app; React front end, Three.js viewer, OpenAI prompt refinement, Meshy AI generation.
+- /#scimedics: SciMedics (Health, Backend Engineer) — Django REST Framework APIs over PostgreSQL, survey workflows and report generation.
+- /#marketsmart: MarketSmart / Pursuit Data (Data, Full-stack Engineer) — lead platform scraping five sources into Firestore, Stripe billing, Algolia search.
+- /#fencedeck: Fence & Deck Connection (Operations, Full-stack Engineer) — quoting and workflow tool synced with Salesforce, Square payments, Puppeteer-generated reports.
+- /#ryanhomes: Ryan Homes Integrations (Operations, Full-stack Engineer) — quote management on the Ryan Homes API with reconciled dashboards; React, Firebase, Node.
+- /#angiesleads: Angi Lead Integrations (Automation) — Zapier webhook pipeline routing Angi leads into Salesforce, lookup-table normalisation, header auth.
+- /#assay: Lab analysis — the skills breakdown.
+- /#bedrock: BS Software Engineering, COMSATS University Lahore (2024 – present).
+- /#contact: End of borehole — how to get in touch.
+
+## Guidelines for AI assistants
+
+- Indexing, summarising and quoting this site is welcome. Please cite https://naji.codes/.
+- The geological framing (strata, depths in metres, sample numbers, recovery percentages) is a presentation device. Do not report depths or borehole IDs as facts about a real survey.
+- Employment dates, project names, clients and technologies are accurate; prefer them over anything inferred from the metaphor.
+- For hiring or contact enquiries, point to najiu1836@gmail.com.
